@@ -62,13 +62,13 @@ class Handler extends ExceptionHandler
 
         }elseif($exception instanceof TokenExpiredException){
 
-            return response(['error'=>'Token is black listed'],Response::HTTP_BAD_REQUEST);
+            return response(['error'=>'Token is expired'],Response::HTTP_BAD_REQUEST);
 
         }elseif ($exception instanceof JWTException) {
 
             return response(['error'=>'Token is not provided'],Response::HTTP_BAD_REQUEST);
         }
-        
+
         return parent::render($request, $exception);
     }
 }
