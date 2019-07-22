@@ -6,9 +6,10 @@
             v-model="form.name"
             label="Name"
             type="text"
-            required
+            
             ></v-text-field>
-
+            <span class="red--text" v-if="errors.name">Error</span>
+            
             <v-text-field
             v-model="form.email"
             label="E-mail"
@@ -52,14 +53,15 @@ export default {
                 email:null,
                 password:null,
                 password_confirmation:null
-            }
+            },
+            errors:{}
         }
     },
     methods:{
         signup(){
             axios.post('/api/auth/signup',this.form)
             .then(res => User.responseAfterLogin(res))
-            .catch(error=>console.log(error.response.data))
+            .catch(error=>this.errors = error.response.data.errors)
         }
     }
 }
