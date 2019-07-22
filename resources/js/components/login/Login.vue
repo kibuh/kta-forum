@@ -18,6 +18,10 @@
             color="green"
             type="submit"
             >Login</v-btn>
+
+            <router-link to="/signup">
+             <v-btn color="blue">Sign Up</v-btn>
+            </router-link>
         
         </form>
     </v-container>
@@ -36,10 +40,6 @@ export default {
     methods:{
 
         login(){
-                // axios.post('/api/auth/login',this.form)
-                // .then(res =>console.log(res.data))
-                // .catch(error => console.log(error.response.data))
-
                User.login(this.form)
         }
     }
