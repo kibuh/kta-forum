@@ -14,15 +14,15 @@
             type="password"
             required
             ></v-text-field>
-            <v-btn 
+            <v-btn
             color="green"
             type="submit"
-            >Login</v-btn>
+            >Logins</v-btn>
 
             <router-link to="/signup">
-             <v-btn color="blue">Sign Up</v-btn>
+             <v-btn color="blue">Signs Up</v-btn>
             </router-link>
-        
+
         </form>
     </v-container>
 </template>
